@@ -66,6 +66,7 @@ class OpentableSpider(scrapy.Spider):
             "opening_hours": details.get("openingHours", "NA"),
             "phone_number": details.get("telephone", "NA"),
             "location": details.get("address", {}),
+            "price_range" : details.get("priceRange", "NA"),
             "restaurant_rating": details.get("aggregateRating", {}),
             "website": details.get("url", "NA"),
             "overview": details.get("description", "NA"),
