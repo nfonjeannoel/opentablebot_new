@@ -63,15 +63,15 @@ class OpentableSpider(scrapy.Spider):
             "url": response.url,
             "tags": tags,
             "rid": str(rid),
-            "menu": menus,
             "opening_hours": details.get("openingHours", "NA"),
             "phone_number": details.get("telephone", "NA"),
             "location": details.get("address", {}),
-            "rating": details.get("aggregateRating", {}),
+            "restaurant_rating": details.get("aggregateRating", {}),
             "website": details.get("url", "NA"),
             "overview": details.get("description", "NA"),
-            "reviews": details.get("review", []),
-            "images": details.get("image", []) + image_list
+            "images": details.get("image", []) + image_list,
+            "menu": menus,
+            "reviews": details.get("review", [])
         }
 
         global all_data
