@@ -4,7 +4,7 @@ import json
 def getJson(expr):
     expr = expr.split('"menus":')
     if len(expr) < 2:
-        # print("less than 2")
+        print("less than 2")
         return
     expr = expr[1]
     stack = []
@@ -53,12 +53,8 @@ def get_ird(param):
 def get_menu(raw_lst):
     menus_list = []
     for section in raw_lst:
-        data = {}
-
-        data["title"] = section.get("title", "NA")
-        data["currency"] = section.get("currency", "NA")
-        data["description"] = section.get("description", "NA")
-        data["sections"] = section.get("sections", "NA")
+        data = {"title": section.get("title", "NA"), "currency": section.get("currency", "NA"),
+                "description": section.get("description", "NA"), "sections": section.get("sections", "NA")}
 
         menus_list.append(data)
     return menus_list
